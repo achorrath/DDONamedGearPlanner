@@ -622,6 +622,8 @@ namespace DDONamedGearPlanner
 							if (CancelBuild) return null;
 
 							if (++BP2P.BarValue % 250 == 0) bw.ReportProgress(BP2P.BarValue);
+							// Don't add a combo with two minor artifacts
+							if (bi.Item.MinorArtifact && tc.Find(ti => ti.Item.MinorArtifact) != null) continue;
 							results.Add(new List<BuildItem>(tc));
 							results.Last().Add(bi);
 						}
@@ -640,6 +642,7 @@ namespace DDONamedGearPlanner
 							if (CancelBuild) return null;
 
 							if (++BP2P.BarValue % 250 == 0) bw.ReportProgress(BP2P.BarValue);
+							if (bi.Item.MinorArtifact && tc.Find(ti => ti.Item.MinorArtifact) != null) continue;
 							results.Add(new List<BuildItem>(tc));
 							results.Last().Add(bi);
 						}
