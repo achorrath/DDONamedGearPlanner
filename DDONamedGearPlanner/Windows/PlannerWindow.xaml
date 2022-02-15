@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:DDONamedGearPlanner"
 		mc:Ignorable="d"
 		x:Name="ddoplanner"
-        Title="DDO Named Gear Planner v" Height="700" Width="850" MinHeight="700" MinWidth="800">
+        Title="DDO Named Gear Planner v" Height="700" Width="886" MinHeight="700" MinWidth="800">
 	
 	<Window.Resources>
 		<ResourceDictionary>
@@ -57,9 +57,9 @@
 		</Menu>
 		<Grid>
 			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="0.35*"/>
+				<ColumnDefinition Width="278*"/>
 				<ColumnDefinition Width="250"/>
-				<ColumnDefinition Width="0.5*"/>
+				<ColumnDefinition Width="345*"/>
 			</Grid.ColumnDefinitions>
 			<DockPanel>
 				<!-- width=187 -->
@@ -200,6 +200,7 @@
 							</GridViewColumn>
 							<GridViewColumn Header="Slot" Width="61" DisplayMemberBinding="{Binding Slot}"/>
 							<GridViewColumn Header="ML" Width="30" DisplayMemberBinding="{Binding ML}"/>
+							<GridViewColumn Header="Value" Width="40" DisplayMemberBinding="{Binding FilteredValue}"/>
 						</GridView>
 					</ListView.View>
 					<ListView.ItemContainerStyle>

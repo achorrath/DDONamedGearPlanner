@@ -831,7 +831,7 @@ namespace DDONamedGearPlanner
 			if (header == "Name") ItemListCopy.Sort((a, b) => string.Compare(a.Name, b.Name) * LastSortDir);
 			else if (header == "Slot") ItemListCopy.Sort((a, b) => string.Compare(a.Slot.ToString(), b.Slot.ToString()) == 0 ? string.Compare(a.Name, b.Name) : string.Compare(a.Slot.ToString(), b.Slot.ToString()));
 			else if (header == "ML") ItemListCopy.Sort((a, b) => a.ML < b.ML ? -1 * LastSortDir : (a.ML > b.ML ? 1 * LastSortDir : string.Compare(a.Name, b.Name)));
-
+			else if (header == "Value") ItemListCopy.Sort((a, b) => a.FilteredValue < b.FilteredValue ? -1 * LastSortDir : (a.FilteredValue > b.FilteredValue ? 1 * LastSortDir : string.Compare(a.Name, b.Name)));
 			UpdateItemSearchResults();
 		}
 

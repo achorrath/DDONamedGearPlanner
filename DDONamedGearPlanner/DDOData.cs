@@ -238,6 +238,20 @@ namespace DDONamedGearPlanner
 			}
 		}
 
+		public float FilteredValue
+		{
+			get
+			{
+				var pl = Properties.FindAll(p => p.Property == ItemFilterSettings.SearchProperty);
+				float total = 0;
+                foreach(var p in pl)
+                {
+					total += p.Value;
+                }
+				return total;
+			}
+		}
+
 		public DDOItemData(ItemDataSource source, bool ma)
 		{
 			Source = source;
