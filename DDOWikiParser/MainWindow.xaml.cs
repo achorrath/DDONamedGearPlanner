@@ -758,6 +758,7 @@ namespace DDOWikiParser
 						}
 						else if (p.EndsWith("False Life")) p = "Hit Points";
 						else if (p.StartsWith("Vitality")) p = "Hit Points";
+						else if (p.EndsWith("Lifeforce")) p = "Hit Points";
 						else if (p.EndsWith("Cold Resistance") || p.Trim().EndsWith("Cold Resistance -")) p = "Cold Resistance";
 						else if (p.EndsWith("Fire Resistance") || p.Trim().EndsWith("Fire Resistance -")) p = "Fire Resistance";
 						else if (p.EndsWith("Electric Resistance") || p.Trim().EndsWith("Electric Resistance -")) p = "Electric Resistance";
