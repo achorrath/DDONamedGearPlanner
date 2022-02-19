@@ -171,22 +171,14 @@ namespace DDONamedGearPlanner
 			int place = -1;
 			for (int i = 0; i < ItemProperties.Count; i++)
 			{
-				// no type means sort only by value
-				if (string.IsNullOrWhiteSpace(ip.Type))
-				{
-					if (ItemProperties[i].Value >= ip.Value) continue;
-					place = i;
-					break;
-				}
-				// any type should appear before no type
-				if (string.IsNullOrWhiteSpace(ItemProperties[i].Type))
-				{
-					place = i;
-					break;
-				}
-				// alphabetical listing of types please
+				// alphabetical listing of types please, with untyped at the end
 				int sc = string.Compare(ItemProperties[i].Type, ip.Type);
-				if (sc < 0) continue;
+				if (sc < 0)
+                {
+					if (ItemProperties[i].Type != null) continue;
+					place = i;
+					break;
+                }
 				// in order by value next
 				else if (sc == 0)
 				{
@@ -199,6 +191,7 @@ namespace DDONamedGearPlanner
 				}
 				else
 				{
+					if (ip.Type == null) continue;
 					place = i;
 					break;
 				}
