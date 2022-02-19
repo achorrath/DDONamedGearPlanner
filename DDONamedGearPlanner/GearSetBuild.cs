@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows;
 using System.Xml;
 
 namespace DDONamedGearPlanner
@@ -590,12 +591,24 @@ namespace DDONamedGearPlanner
 				if (filters)
 				{
 					XmlElement xe = doc.GetElementsByTagName("Filters")[0] as XmlElement;
+					HashSet<string> skipped = new HashSet<string>();
 					if (xe != null)
 						foreach (XmlElement xf in xe.ChildNodes)
 						{
 							BuildFilter bf = BuildFilter.FromXml(xf);
+							if (!DatasetManager.Dataset.ItemProperties.ContainsKey(bf.Property))
+                            {
+								skipped.Add(bf.Property);
+								continue;
+                            }
 							build.Filters[bf.Slot].Add(bf);
 						}
+					if (skipped.Count > 0)
+                    {
+						string properties = string.Join("\n    ", skipped.OrderBy(s => s));
+						string message = "Filters using the following invalid properties were skipped\nduring load:\n\n    " + properties + "\n\nPlease verify your loaded filters.";
+                        MessageBox.Show(message, "Invalid Filter Properties", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
 				}
 
 				if (results)
