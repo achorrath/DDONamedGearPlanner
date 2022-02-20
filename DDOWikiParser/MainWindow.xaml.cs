@@ -784,6 +784,7 @@ namespace DDOWikiParser
 						else if (p.EndsWith("Radiance Lore")) p = "Light Spell Critical Chance";
 						else if (p.EndsWith("Repair Lore")) p = "Repair Spell Critical Chance";
 						else if (p.EndsWith("Sonic Lore")) p = "Sonic Spell Critical Chance";
+						else if (p.EndsWith("Universal Spell Lore")) p = "Universal Spell Critical Chance";
 						else if (p.EndsWith("Spellcasting Implement")) p = "Universal Spell Power";
 						else if (p.EndsWith("Distant Diversion")) p = "Ranged Threat Reduction";
 						else if (p.EndsWith("Mystic Diversion")) p = "Magic Threat Reduction";
