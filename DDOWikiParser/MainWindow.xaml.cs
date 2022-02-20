@@ -788,6 +788,7 @@ namespace DDOWikiParser
 						else if (p.EndsWith("Distant Diversion")) p = "Ranged Threat Reduction";
 						else if (p.EndsWith("Mystic Diversion")) p = "Magic Threat Reduction";
 						else if (p.EndsWith("Diversion")) p = "Melee Threat Reduction";
+						else if (p.EndsWith("Incite")) p = "Melee Threat Generation";
 						else if (p.EndsWith("Open Lock")) p = "Open Lock";
 						else if (p == "Rough Hide")
 						{
