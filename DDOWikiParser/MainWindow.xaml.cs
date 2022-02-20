@@ -1922,6 +1922,15 @@ namespace DDOWikiParser
 					data.AddProperty("Perform", v, vi, null);
 					data.AddProperty("Use Magic Device", v, vi, null);
 				}
+				else if (p == "Persuasion")
+				{
+					data.AddProperty("Bluff", "competence", 3, null);
+					data.AddProperty("Diplomacy", "competence", 3, null);
+					data.AddProperty("Haggle", "competence", 3, null);
+					data.AddProperty("Intimidate", "competence", 3, null);
+					data.AddProperty("Perform", "competence", 3, null);
+					data.AddProperty("Use Magic Device", "competence", 3, null);
+				}
 				else if (p.StartsWith("Dexterity Skills -") || p.EndsWith("Nimble Skills Bonus"))
 				{
 					data.AddProperty("Balance", v, vi, null);
