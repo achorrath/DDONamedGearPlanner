@@ -1408,6 +1408,12 @@ namespace DDOWikiParser
 							vi += 5;
 							v = "enhancement";
 						}
+						else if (p == "Demonic Might")
+						{
+							p = "Strength";
+							vi = 2;
+							v = "profane";
+						}
 						//else if (NullTypeProperties.Contains(p)) v = null;
 					}
 					#endregion
