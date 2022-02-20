@@ -963,6 +963,7 @@ namespace DDOWikiParser
 						}
 						else if (p == "Adamantine Lined") p = "Adamantine";
 						else if (p == "Accuracy") p = "Attack";
+						else if (p == "Deadly") p = "Damage";
 						else if (p.StartsWith("Rune Arm Charge Rate")) p = "Rune Arm Charge Rate";
 						else if (p == "Smoke Screen")
 						{
