@@ -758,6 +758,7 @@ namespace DDOWikiParser
 						}
 						else if (p.EndsWith("False Life")) p = "Hit Points";
 						else if (p.StartsWith("Vitality")) p = "Hit Points";
+						else if (p.EndsWith("Lifeforce")) p = "Hit Points";
 						else if (p.EndsWith("Cold Resistance") || p.Trim().EndsWith("Cold Resistance -")) p = "Cold Resistance";
 						else if (p.EndsWith("Fire Resistance") || p.Trim().EndsWith("Fire Resistance -")) p = "Fire Resistance";
 						else if (p.EndsWith("Electric Resistance") || p.Trim().EndsWith("Electric Resistance -")) p = "Electric Resistance";
@@ -783,10 +784,12 @@ namespace DDOWikiParser
 						else if (p.EndsWith("Radiance Lore")) p = "Light Spell Critical Chance";
 						else if (p.EndsWith("Repair Lore")) p = "Repair Spell Critical Chance";
 						else if (p.EndsWith("Sonic Lore")) p = "Sonic Spell Critical Chance";
+						else if (p.EndsWith("Universal Spell Lore")) p = "Universal Spell Critical Chance";
 						else if (p.EndsWith("Spellcasting Implement")) p = "Universal Spell Power";
 						else if (p.EndsWith("Distant Diversion")) p = "Ranged Threat Reduction";
 						else if (p.EndsWith("Mystic Diversion")) p = "Magic Threat Reduction";
 						else if (p.EndsWith("Diversion")) p = "Melee Threat Reduction";
+						else if (p.EndsWith("Incite")) p = "Melee Threat Generation";
 						else if (p.EndsWith("Open Lock")) p = "Open Lock";
 						else if (p == "Rough Hide")
 						{
@@ -962,6 +965,7 @@ namespace DDOWikiParser
 						}
 						else if (p == "Adamantine Lined") p = "Adamantine";
 						else if (p == "Accuracy") p = "Attack";
+						else if (p == "Deadly") p = "Damage";
 						else if (p.StartsWith("Rune Arm Charge Rate")) p = "Rune Arm Charge Rate";
 						else if (p == "Smoke Screen")
 						{
@@ -1405,6 +1409,12 @@ namespace DDOWikiParser
 							p = "Sunder DC";
 							vi += 5;
 							v = "enhancement";
+						}
+						else if (p == "Demonic Might")
+						{
+							p = "Strength";
+							vi = 2;
+							v = "profane";
 						}
 						//else if (NullTypeProperties.Contains(p)) v = null;
 					}
@@ -1912,6 +1922,15 @@ namespace DDOWikiParser
 					data.AddProperty("Intimidate", v, vi, null);
 					data.AddProperty("Perform", v, vi, null);
 					data.AddProperty("Use Magic Device", v, vi, null);
+				}
+				else if (p == "Persuasion")
+				{
+					data.AddProperty("Bluff", "competence", 3, null);
+					data.AddProperty("Diplomacy", "competence", 3, null);
+					data.AddProperty("Haggle", "competence", 3, null);
+					data.AddProperty("Intimidate", "competence", 3, null);
+					data.AddProperty("Perform", "competence", 3, null);
+					data.AddProperty("Use Magic Device", "competence", 3, null);
 				}
 				else if (p.StartsWith("Dexterity Skills -") || p.EndsWith("Nimble Skills Bonus"))
 				{
