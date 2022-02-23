@@ -194,13 +194,23 @@
 											<TextBlock.ToolTip>
 												<TextBlock Text="{Binding Name}"/>
 											</TextBlock.ToolTip>
-								</TextBlock>
+										</TextBlock>
 									</DataTemplate>
 								</GridViewColumn.CellTemplate>
 							</GridViewColumn>
 							<GridViewColumn Header="Slot" Width="61" DisplayMemberBinding="{Binding Slot}"/>
 							<GridViewColumn Header="ML" Width="30" DisplayMemberBinding="{Binding ML}"/>
-							<GridViewColumn Header="Value" Width="40" DisplayMemberBinding="{Binding FilteredValue}"/>
+							<GridViewColumn Header="Value" Width="40">
+								<GridViewColumn.CellTemplate>
+									<DataTemplate>
+										<TextBlock Text="{Binding FilteredValue}">
+											<TextBlock.ToolTip>
+												<TextBlock Text="{Binding FilteredProperties}"/>
+											</TextBlock.ToolTip>
+										</TextBlock>
+									</DataTemplate>
+								</GridViewColumn.CellTemplate>
+							</GridViewColumn>
 						</GridView>
 					</ListView.View>
 					<ListView.ItemContainerStyle>
