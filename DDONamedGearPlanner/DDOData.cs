@@ -252,6 +252,21 @@ namespace DDONamedGearPlanner
 			}
 		}
 
+		public string FilteredProperties
+        {
+			get
+            {
+				if (ItemFilterSettings.SearchProperty == null) return "Select an Item Property";
+				else
+                {
+					var pl = Properties.FindAll(p => p.Property == ItemFilterSettings.SearchProperty);
+					List<string> psl = new List<string>();
+					foreach(var p in pl) { psl.Add(p.Type + " " + p.Value); }
+					return string.Join("\n", psl);
+                }
+            }
+        }
+
 		public DDOItemData(ItemDataSource source, bool ma)
 		{
 			Source = source;
