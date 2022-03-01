@@ -1872,7 +1872,7 @@ namespace DDOWikiParser
 					data.AddProperty("Fire Resistance", v, vi, null);
 					data.AddProperty("Sonic Resistance", v, vi, null);
 				}
-				else if (p == "Spell Focus")
+				else if (p.StartsWith("Spell Focus"))
 				{
 					data.AddProperty("Abjuration Spell DC", v, vi, null);
 					data.AddProperty("Conjuration Spell DC", v, vi, null);
