@@ -1622,6 +1622,18 @@ namespace DDOWikiParser
 					data.AddProperty("Electric Spell Power", v, vi, null);
 					data.AddProperty("Sonic Spell Power", v, vi, null);
 				}
+				else if (p == "Sacred Ground Lore")
+				{
+					data.AddProperty("Acid Spell Critical Chance", v, vi, null);
+					data.AddProperty("Light Spell Critical Chance", v, vi, null);
+					data.AddProperty("Alignment Spell Critical Chance", v, vi, null);
+				}
+				else if (p == "Power of the Sacred Ground")
+                {
+					data.AddProperty("Acid Spell Power", v, vi, null);
+					data.AddProperty("Light Spell Power", v, vi, null);
+					data.AddProperty("Alignment Spell Power", v, vi, null);
+                }
 				else if (p.EndsWith("Nullification"))
 				{
 					data.AddProperty("Negative Spell Power", v, vi, null);
