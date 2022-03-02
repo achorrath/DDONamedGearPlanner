@@ -12036,6 +12036,92 @@ namespace DDONamedGearPlanner
 			});
 			#endregion
 
+			#region Hunter and Hunted sets
+			Sets.Add("Huntmaster's Favor", new DDOItemSet
+			{
+				Name = "Huntmaster's Favor",
+				WikiURL = "https://ddowiki.com/page/Named_item_sets#Huntmaster.27s_Favor",
+				SetBonuses = new List<DDOItemSetBonus>
+				{
+					new DDOItemSetBonus
+					{
+						MinimumItems = 2,
+						Bonuses = new List<DDOItemSetBonusProperty>
+						{
+							new DDOItemSetBonusProperty
+							{
+								Property = "Sneak Attack Dice",
+								Type = "artifact",
+								Value = 3
+							}
+						}
+					},
+					new DDOItemSetBonus
+					{
+						MinimumItems = 3,
+						Bonuses = new List<DDOItemSetBonusProperty>
+						{
+							new DDOItemSetBonusProperty
+							{
+								Property = "Doublestrike",
+								Type = "artifact",
+								Value = 15
+							}
+						}
+					},
+					new DDOItemSetBonus
+					{
+						MinimumItems = 4,
+						Bonuses = new List<DDOItemSetBonusProperty>
+						{
+							new DDOItemSetBonusProperty
+							{
+								Property = "Damage vs Helpless",
+								Type = "artifact",
+								Value = 15
+							}
+						}
+					}
+
+				}
+			});
+
+			Sets.Add("The Labyrinthian Inferno", new DDOItemSet
+			{
+				Name = "The Labyrinthian Inferno",
+				WikiURL = "https://ddowiki.com/page/Named_item_sets#The_Labyrinthian_Inferno",
+				SetBonuses = new List<DDOItemSetBonus>
+				{
+					new DDOItemSetBonus
+					{
+						MinimumItems = 2,
+						Bonuses = new List<DDOItemSetBonusProperty>
+						{
+							new DDOItemSetBonusProperty
+							{
+								Property = "Fire Spell Critical Chance",
+								Type = "artifact",
+								Value = 6
+							},
+							new DDOItemSetBonusProperty
+							{
+								Property = "Fire Spell Power",
+								Type = "artifact",
+								Value = 30
+							},
+							new DDOItemSetBonusProperty
+							{
+								Property = "Damage vs Helpless",
+								Type = "artifact",
+								Value = 15
+							}
+						}
+					}
+
+				}
+			});			
+			
+			#endregion
 			/*
 				Sets.Add("", new DDOItemSet
 				{
