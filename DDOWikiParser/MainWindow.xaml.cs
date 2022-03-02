@@ -1632,6 +1632,18 @@ namespace DDOWikiParser
 					data.AddProperty("Electric Spell Power", v, vi, null);
 					data.AddProperty("Sonic Spell Power", v, vi, null);
 				}
+				else if (p == "Sacred Ground Lore")
+				{
+					data.AddProperty("Acid Spell Critical Chance", v, vi, null);
+					data.AddProperty("Light Spell Critical Chance", v, vi, null);
+					data.AddProperty("Alignment Spell Critical Chance", v, vi, null);
+				}
+				else if (p == "Power of the Sacred Ground")
+                {
+					data.AddProperty("Acid Spell Power", v, vi, null);
+					data.AddProperty("Light Spell Power", v, vi, null);
+					data.AddProperty("Alignment Spell Power", v, vi, null);
+                }
 				else if (p.EndsWith("Nullification"))
 				{
 					data.AddProperty("Negative Spell Power", v, vi, null);
@@ -1827,11 +1839,14 @@ namespace DDOWikiParser
 				}
 				else if (p == "Frozen Storm Lore")
 				{
-					vi = ParseNumber(v);
-					v = "equipment";
 					data.AddProperty("Cold Spell Critical Chance", v, vi, null);
 					data.AddProperty("Electric Spell Critical Chance", v, vi, null);
 				}
+				else if (p == "Power of the Frozen Storm")
+                {
+					data.AddProperty("Cold Spell Power", v, vi, null);
+					data.AddProperty("Electric Spell Power", v, vi, null);
+                }
 				else if (p == "Arcane Lore")
 				{
 					data.AddProperty("Acid Spell Critical Chance", "equipment", 6, null);
@@ -1882,7 +1897,7 @@ namespace DDOWikiParser
 					data.AddProperty("Fire Resistance", v, vi, null);
 					data.AddProperty("Sonic Resistance", v, vi, null);
 				}
-				else if (p == "Spell Focus")
+				else if (p.StartsWith("Spell Focus"))
 				{
 					data.AddProperty("Abjuration Spell DC", v, vi, null);
 					data.AddProperty("Conjuration Spell DC", v, vi, null);
