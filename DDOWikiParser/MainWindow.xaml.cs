@@ -1829,11 +1829,14 @@ namespace DDOWikiParser
 				}
 				else if (p == "Frozen Storm Lore")
 				{
-					vi = ParseNumber(v);
-					v = "equipment";
 					data.AddProperty("Cold Spell Critical Chance", v, vi, null);
 					data.AddProperty("Electric Spell Critical Chance", v, vi, null);
 				}
+				else if (p == "Power of the Frozen Storm")
+                {
+					data.AddProperty("Cold Spell Power", v, vi, null);
+					data.AddProperty("Electric Spell Power", v, vi, null);
+                }
 				else if (p == "Arcane Lore")
 				{
 					data.AddProperty("Acid Spell Critical Chance", "equipment", 6, null);
